@@ -1,44 +1,38 @@
 package com.conversor.view;
 
 import javax.swing.JOptionPane;
-
-import com.conversor.controller.Divisas;
-import com.conversor.modelo.Convertir;
-import com.conversor.modelo.Temperatura;
+import com.conversor.controller.Error;
+import com.conversor.controller.TipoConversores;
+import com.conversor.modelo.ConvertirTemperatura;
 
 public class Seleccion {
-	
-	public static void Selccionar() {
-		 
-		Object[] tipo =  {"Conversor de Moneda", "Conversor de Temperatura"};
-		
+
+	public static void Seleccionar() {
+
 		try {
-		String num = JOptionPane.showInputDialog(null ,"Seleccione una opción de converción", "Menu", JOptionPane.PLAIN_MESSAGE, null,
-					tipo, "Selecciona").toString();
-		/**
-		 * Al elegir conversor de moneda se guarda la moneda a convertir en option
-		 * y la cantidad de dinero que desea convertin en dinero
-		 */
-		if (num == "Conversor de Moneda") { 
-			
-			String option = JOptionPane.showInputDialog(null, "Elige moneda a la que deseas convertir tu dinero", "Message", JOptionPane.DEFAULT_OPTION, null,
-					Divisas.values(), Divisas.values()[0]).toString();
-			
-			double dinero = Double.parseDouble(
-					JOptionPane.showInputDialog(null, "ingrese la cantidad de dinero que desea convertir: "));
-			
-			Convertir.Conversor(option, dinero);
-			
-		}else if(num == "Conversor de Temperatura")
-			Temperatura.Termometro();
-		
-		
-		
-		
-		}catch(NullPointerException ex) {
-			JOptionPane.showMessageDialog(null, "Saliendo del Sistema...");
-		}catch (NumberFormatException ex) {
-			JOptionPane.showMessageDialog(null, "Se esperaba un numero");	
+
+			String seleccion = JOptionPane.showInputDialog(null, "Seleccione una opción de conversión",
+					"Message", JOptionPane.DEFAULT_OPTION, null, TipoConversores.values(), TipoConversores.values()[0]).toString();
+
+			/**
+			 * Al elegir tipo de conversion conversor de moneda se guarda la moneda
+			 */
+
+			if (seleccion != null) {
+				switch (seleccion) {
+				case "Conversor de Moneda":
+					ConversorMoneda.Moneda();
+					break;
+				case "Conversor de Temperatura":
+					ConvertirTemperatura.Termometro();
+					break;
+				default:
+				}
+			}else
+				Error.programaTerminado();
+		} catch (NullPointerException ex) {
+			Error.programaTerminado();
 		}
 	}
-}	
+
+}

@@ -6,7 +6,7 @@ package com.conversor.view;
 public class Menu {
 
 	public static void main(String[] args) {
-			Seleccion.Selccionar();
+			Seleccion.Seleccionar();
 	}
 
 	
