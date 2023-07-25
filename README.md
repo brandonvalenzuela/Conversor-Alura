@@ -16,7 +16,7 @@ brandonvalenzuela@gmail.com  2023/25/07
 
         * [Temperatura](#conversor-de-temperatura)
 
-        * [Distaancia](#conversor-de-distancia)
+        * [Distancia](#conversor-de-distancia)
 
     * [Pantallas](#Pantallas)
 
@@ -93,11 +93,9 @@ Esta la funcion Distancia() la cual contiene:
 El programa pide al usuario que ingrese la cantidad a convertir, luego el programa pide al usuario que seleccione el tipo de conversion de que unidad a que unidad de distancia sera, finalmente el programa dependiendo de la seleccion aplica la conversion y lo muestra en pantalla.
 
 ## Pantallas
+   Para mostrar las pantallas de la interfaz para el uso de la aplicacion. Hace uso de la libreria JOptionPane de javax.
 
-Para mostrar las pantallas de la interfaz para el uso de la aplicacion. Hace uso de la libreria JOptionPane de javax.
-
-### Clone
-https://github.com/brandonvalenzuela/Conversor-Alura
+## Clone https://github.com/brandonvalenzuela/Conversor-Alura
 
 
 
