@@ -1,5 +1,5 @@
 package com.conversor.controller;
 
-public abstract class Conversor {
-	public abstract void convertir(double valor);
+public interface Conversor {	
+	public abstract void convertir(String opcionConversion, double valor);
 }

@@ -1,23 +1,28 @@
 package com.conversor.modelo;
 
+import javax.swing.JOptionPane;
+
+import com.conversor.controller.Conversor;
 import com.conversor.controller.Divisas;
 import com.conversor.controller.Error;
-import com.conversor.controller.Conversor;
+import com.conversor.view.Main;
 
-public class ConvertirMoneda extends Conversor {
 
-	public static void Conversor(String option, double dinero) {
-			
-		try {
+public class ConvertirMoneda implements Conversor {
+
+    public static void convertirMoneda(String option, double dinero) {
+    	ConvertirMoneda convertidor = new ConvertirMoneda();
+    	
+        try {
             String[] conversionOptions = {
-                "Peso a Dolar", "Peso a Euro", "Peso a Libra", "Peso a Yen", "Peso a Won Coreano",
-                "Dolar a Peso", "Euro a Peso", "Libra a Peso", "Yen a Peso", "Won Coreano a Peso"
+                    "Peso a Dolar", "Peso a Euro", "Peso a Libra", "Peso a Yen", "Peso a Won Coreano",
+                    "Dolar a Peso", "Euro a Peso", "Libra a Peso", "Yen a Peso", "Won Coreano a Peso"
             };
 
             if (isValidOption(option, conversionOptions)) {
-                Divisas.convertir(option, dinero);
+            	convertidor.convertir(option, dinero); // Llamada al método convertir de la interfaz Conversor
             } else {
-                System.out.println("Opción inválida");
+            	JOptionPane.showMessageDialog(null, "Opción inválida", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (NullPointerException ex) {
@@ -32,11 +37,24 @@ public class ConvertirMoneda extends Conversor {
             }
         }
         return false;
-	}
+    }
 
-	@Override
-	public void convertir(double valor) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void convertir(String opcionConversion, double valor) {
+        Divisas[] divisas = Divisas.values();
+        for (Divisas divisa : divisas) {
+            if (divisa.getNombre().equalsIgnoreCase(opcionConversion)) {
+                double cantidad = divisa.getPesoADivisa() * valor;
+                JOptionPane.showMessageDialog(null, "Tienes $" + cantidad + " " + divisa.getTipoDivisa());
+                int continuar = JOptionPane.showConfirmDialog(null, "¿Le gustaría continuar?");
+
+                if (continuar == 0)
+                    Main.main(null);
+                else
+                    Error.programaTerminado();
+                return;
+            }
+        }
+    }
 }
+

@@ -1,19 +1,20 @@
 package com.conversor.controller;
 
-public enum TipoConversores {
-    DIVISA("Conversor de Moneda"),
-    TEMPERATURA("Conversor de Temperatura"),
-    LONGITUD("Conversor de Longitud");
+public enum TipoConversores{
 
-    String tipo;
-    int id;
+		CONVERSOR_MONEDA("Conversor de Moneda"), 
+		CONVERSOR_TEMPERATURA("Conversor de Temperatura"), 
+		LONGITUD("Conversor de Longitud"),	
+		TIPODEDATOS("Conversor de Datos");
 
-    private TipoConversores(String tipo) {
-        this.tipo = tipo;
-    }
+		String tipo;
 
-    @Override
-    public String toString() {
-        return tipo;
-    }
-}
+		TipoConversores(String tipo) {
+			this.tipo = tipo;
+		}
+
+		@Override
+		public String toString() {
+			return tipo;
+		}
+	}

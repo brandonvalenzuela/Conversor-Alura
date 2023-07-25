@@ -1,8 +1,5 @@
 package com.conversor.controller;
 
-import javax.swing.JOptionPane;
-import com.conversor.view.Seleccion;
-
 public enum Divisas {
 
 	MEXUSA("Peso a Dolar", 0.060, "Dolares"), USAMEX("Dolar a Peso", 16.79, "Pesos"),
@@ -19,23 +16,17 @@ public enum Divisas {
 		this.pesoADivisa = pesoADivisa;
 		this.tipoDivisa = tipoDivisa;
 	}
-
-	public static void convertir(String nombre, double presio) {
-		Divisas[] divisas = Divisas.values();
-		for (Divisas divisa : divisas) {
-			if (divisa.nombre.equalsIgnoreCase(nombre)) {
-				double cantidad = divisa.pesoADivisa * presio;
-				JOptionPane.showMessageDialog(null, "Tienes $" + cantidad + " " + divisa.tipoDivisa);
-				int continuar = JOptionPane.showConfirmDialog(null, "¿Le gustaría continuar?");
-				
-				if (continuar == 0)
-					Seleccion.Seleccionar();
-				else
-					Error.programaTerminado();
-				return;
-			}
-		}
-
+	
+	public double getPesoADivisa() {
+		return pesoADivisa;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public String getTipoDivisa() {
+		return tipoDivisa;
 	}
 
 	@Override
