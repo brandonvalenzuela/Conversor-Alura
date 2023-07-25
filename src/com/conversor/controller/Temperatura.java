@@ -3,37 +3,37 @@ package com.conversor.controller;
 public enum Temperatura {
 	CELSIUS_TO_KELVIN("Celcius a kelvin","Grados Kelvin"){
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura + 273.15);
 		}
 	},
 	CELSIUS_TO_FAHRENHEIT("Celcius a Fahrenheit", "Grados Fahrenheit"){
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura * 9 / 5) + 32;
 		}
 	},
 	FAHRENHEIT_TO_CELCIUS("Fahrenheit a Celcius", "Grados Celcius"){
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura - 32) * 5/9;
 		}
 	},
 	FAHRENHEIT_TO_KELVIN("Fahrenheit a Kelvin", "Grados Kelvin"){
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura - 32) * 5/9 + 273.15;
 		}
 	},
 	KELVIN_TO_CELCIUS("Kelvin a Celcius", "Grados Celcius") {
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura - 273.15);
 		}
 	},
 	KELVIN_TO_FAHRENHEIT("Kelvin a Fahrenheit","Grados Fahrenheit"){
 		@Override
-		public double calculate(double temperatura) {
+		public double calcular(double temperatura) {
 			return (temperatura - 273.15) * 9/5 + 32;
 		}
 	};
@@ -59,5 +59,5 @@ public enum Temperatura {
 		return unidad;
 	}
 
-	public abstract double calculate(double value);
+	public abstract double calcular(double value);
 }
