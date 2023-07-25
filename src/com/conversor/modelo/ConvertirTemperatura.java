@@ -39,7 +39,7 @@ public class ConvertirTemperatura implements Conversor {
 		Temperatura[] grados = Temperatura.values();
 		for (Temperatura grado : grados) {
 			if (grado.getNombre().equalsIgnoreCase(opcionConversion)) {
-				double cantidad = grado.calculate(valor);
+				double cantidad = grado.calcular(valor);
 				JOptionPane.showMessageDialog(null, "El resultado es: " + cantidad + " " + grado.getUnidad());
 				int continuar = JOptionPane.showConfirmDialog(null, "¿Le gustaría continuar?");
 
