@@ -58,7 +58,6 @@ Funcion desde la cual se inicia el programa, contiene la opcion de seleccionar e
 
         posiblesValores -> Arreglo de objetos, Conversores a seleccionar
         opcionSeleccionada -> Enum, Opcion que el usuario selecciono
-        siono -> Entero, Confirmacion del usuario si desea continuar o no
 
 El usuario selecciona una opcion de posiblesValores, y se guarda en opcionSeleccionada, dependiendo la opcion se manda a llamar la funcion correspondiende de la clase Conversor, al finalizar se pregunta al usuario si desea continuar, la respuesta se guarda en la variable siono, y dependiendo la seleccion se vuelve a ejecutar el programa o se finaliza con un cuadro de dialogo que muestra un mensaje de finalizacion.
 
@@ -67,26 +66,23 @@ El usuario selecciona una opcion de posiblesValores, y se guarda en opcionSelecc
 Hay 4 tipos de conversores: Moneda, Temperatura, Distancia y Datos.
 
 ### Conversor de monedas
-Esta la funcion Monedas() la cual contiene:
+Esta la funcion ConvertirMoneda() la cual contiene:
         cantidad -> Double, caantidad ingresada por el usuario
         opcionSeleccionada -> Enum, seleccion del usuario de tipo a tipo de moneda
-        df -> DecimalFormat, para mostrar la salida en el formato deseado
 
 El programa pide al usuario que ingrese la cantidad a convertir, luego el programa pide al usuario que seleccione el tipo de conversion de que moneda a que moneda sera, finalmente el programa dependiendo de la seleccion aplica el cambio y lo muestra en pantalla.
 
 ### Conversor de temperatura
-Esta la funcion Temperatura() la cual contiene:
+Esta la funcion ConvertirTemperatura() la cual contiene:
         cantidad -> Double, caantidad ingresada por el usuario
         opcionSeleccionada -> Enum, seleccion del usuario de tipo a tipo de moneda
-        df -> DecimalFormat, para mostrar la salida en el formato deseado
 
 El programa pide al usuario que ingrese la cantidad a convertir, luego el programa pide al usuario que seleccione el tipo de conversion de que grados a que grados sera, finalmente el programa dependiendo de la seleccion aplica la conversion y lo muestra en pantalla.
 
 ### Conversor de distancia (preoceso)
-Esta la funcion Distancia() la cual contiene:
+Esta la funcion ConvertirDistancia() la cual contiene:
         cantidad -> Double, caantidad ingresada por el usuario
         opcionSeleccionada -> Enum, seleccion del usuario de tipo a tipo de moneda
-        df -> DecimalFormat, para mostrar la salida en el formato deseado
 
 ### Conversor de datos (En espera)
 
